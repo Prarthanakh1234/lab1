@@ -18,6 +18,13 @@ WORKDIR /app
 COPY hi.py .
 CMD ["python", "hi.py"]
 
+      or 
+FROM python
+WORKDIR /app
+COPY . /app
+RUN python sample.py
+CMD ["python", "sample.py"]
+
 docker build -t im3 .
 docker tag sha256:f9b91b2f179adf94d844a8e28b329a63d93f148b3820fc97a71e88e5a773e807/prarthanakh/im3
 docker tag im3 docker.io/prarthanakh/im3:latest
